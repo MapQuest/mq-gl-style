@@ -344,21 +344,72 @@
       }
     },
     {
-      "id": "trans_ramp-fill",
+      "id": "trans_major4-casing",
       "type": "line",
       "source": "mapquest",
       "source-layer": "trans_linear",
-      "minzoom": 10,
+      "minzoom": 15,
       "filter": [
         "all",
-        ["!=", "rclass", 0],
-        ["==", "ramp", true]
+        ["==", "rclass", 4],
+        ["!=", "ramp", true]
       ],
       "paint": {
         "line-cap": "round",
         "line-join": "round",
-        "line-color": "@ramp-fill-color",
-        "line-width": "@ramp-fill-width"
+        "line-color": "#969696",
+        "line-width": {
+          "stops": [
+            [15, 4],
+            [18, 14]
+          ]
+        }
+      }
+    },
+    {
+      "id": "trans_major23-casing",
+      "type": "line",
+      "source": "mapquest",
+      "source-layer": "trans_linear",
+      "minzoom": 15,
+      "filter": [
+        "all",
+        [
+          "any",
+          ["==", "rclass", 2],
+          ["==", "rclass", 3]
+        ],
+        ["!=", "ramp", true]
+      ],
+      "paint": {
+        "line-cap": "round",
+        "line-join": "round",
+        "line-color": "#e3d58f",
+        "line-width": {
+          "stops": [
+            [15, 4],
+            [18, 14]
+          ]
+        }
+      }
+    },
+    {
+      "id": "trans_major_0-casing",
+      "type": "line",
+      "source": "mapquest",
+      "source-layer": "trans_linear",
+      "minzoom": 15,
+      "filter": [
+        "all",
+        ["==", "rclass", 1],
+        ["!=", "ramp", true],
+        ["!=", "brunnel", 2]
+      ],
+      "paint": {
+        "line-cap": "round",
+        "line-join": "round",
+        "line-color": "@major_0-casing-color",
+        "line-width": "@major_0-casing-width"
       }
     },
     {
@@ -523,7 +574,97 @@
         "line-width": "@freeway_2-casing-width"
       }
     },
-    
+    {
+      "id": "trans_ramp-fill",
+      "type": "line",
+      "source": "mapquest",
+      "source-layer": "trans_linear",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["!=", "rclass", 0],
+        ["==", "ramp", true]
+      ],
+      "paint": {
+        "line-cap": "round",
+        "line-join": "round",
+        "line-color": "@ramp-fill-color",
+        "line-width": "@ramp-fill-width"
+      }
+    },
+    {
+      "id": "trans_major4-fill",
+      "type": "line",
+      "source": "mapquest",
+      "source-layer": "trans_linear",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["==", "rclass", 4],
+        ["!=", "ramp", true]
+      ],
+      "paint": {
+        "line-cap": "round",
+        "line-join": "round",
+        "line-color": "#ffffff",
+        "line-width": {
+          "stops": [
+            [12, 1],
+            [15, 2],
+            [18, 11]
+          ]
+        }
+      }
+    },
+    {
+      "id": "trans_major23-fill",
+      "type": "line",
+      "source": "mapquest",
+      "source-layer": "trans_linear",
+      "minzoom": 8,
+      "filter": [
+        "all",
+        [
+          "any",
+          ["==", "rclass", 2],
+          ["==", "rclass", 3]
+        ],
+        ["!=", "ramp", true]
+      ],
+      "paint": {
+        "line-cap": "round",
+        "line-join": "round",
+        "line-color": "#fae661",
+        "line-width": {
+          "stops": [
+            [8,0.75],
+            [10, 1.5],
+            [12, 1],
+            [15, 3],
+            [18, 11]
+          ]
+        }
+      }
+    },
+    {
+      "id": "trans_major_0-fill",
+      "type": "line",
+      "source": "mapquest",
+      "source-layer": "trans_linear",
+      "minzoom": 6,
+      "filter": [
+        "all",
+        ["==", "rclass", 1],
+        ["!=", "ramp", true],
+        ["!=", "brunnel", 2]
+      ],
+      "paint": {
+        "line-cap": "round",
+        "line-join": "round",
+        "line-color": "@major_0-fill-color",
+        "line-width": "@major_0-fill-width"
+      }
+    },
     {
       "id": "trans_freeway_0-fill",
       "type": "line",
@@ -689,147 +830,6 @@
       }
     },
 
-    {
-      "id": "trans_major_0-casing",
-      "type": "line",
-      "source": "mapquest",
-      "source-layer": "trans_linear",
-      "minzoom": 15,
-      "filter": [
-        "all",
-        ["==", "rclass", 1],
-        ["!=", "ramp", true],
-        ["!=", "brunnel", 2]
-      ],
-      "paint": {
-        "line-cap": "round",
-        "line-join": "round",
-        "line-color": "@major_0-casing-color",
-        "line-width": "@major_0-casing-width"
-      }
-    },
-    {
-      "id": "trans_major_0-fill",
-      "type": "line",
-      "source": "mapquest",
-      "source-layer": "trans_linear",
-      "minzoom": 6,
-      "filter": [
-        "all",
-        ["==", "rclass", 1],
-        ["!=", "ramp", true],
-        ["!=", "brunnel", 2]
-      ],
-      "paint": {
-        "line-cap": "round",
-        "line-join": "round",
-        "line-color": "@major_0-fill-color",
-        "line-width": "@major_0-fill-width"
-      }
-    },
-    {
-      "id": "trans_major23-casing",
-      "type": "line",
-      "source": "mapquest",
-      "source-layer": "trans_linear",
-      "minzoom": 15,
-      "filter": [
-        "all",
-        [
-          "any",
-          ["==", "rclass", 2],
-          ["==", "rclass", 3]
-        ],
-        ["!=", "ramp", true]
-      ],
-      "paint": {
-        "line-cap": "round",
-        "line-join": "round",
-        "line-color": "#e3d58f",
-        "line-width": {
-          "stops": [
-            [15, 4],
-            [18, 14]
-          ]
-        }
-      }
-    },    {
-      "id": "trans_major23-fill",
-      "type": "line",
-      "source": "mapquest",
-      "source-layer": "trans_linear",
-      "minzoom": 8,
-      "filter": [
-        "all",
-        [
-          "any",
-          ["==", "rclass", 2],
-          ["==", "rclass", 3]
-        ],
-        ["!=", "ramp", true]
-      ],
-      "paint": {
-        "line-cap": "round",
-        "line-join": "round",
-        "line-color": "#fae661",
-        "line-width": {
-          "stops": [
-            [8,0.75],
-            [10, 1.5],
-            [12, 1],
-            [15, 3],
-            [18, 11]
-          ]
-        }
-      }
-    },
-    {
-      "id": "trans_major4-casing",
-      "type": "line",
-      "source": "mapquest",
-      "source-layer": "trans_linear",
-      "minzoom": 15,
-      "filter": [
-        "all",
-        ["==", "rclass", 4],
-        ["!=", "ramp", true]
-      ],
-      "paint": {
-        "line-cap": "round",
-        "line-join": "round",
-        "line-color": "#969696",
-        "line-width": {
-          "stops": [
-            [15, 4],
-            [18, 14]
-          ]
-        }
-      }
-    },    {
-      "id": "trans_major4-fill",
-      "type": "line",
-      "source": "mapquest",
-      "source-layer": "trans_linear",
-      "minzoom": 12,
-      "filter": [
-        "all",
-        ["==", "rclass", 4],
-        ["!=", "ramp", true]
-      ],
-      "paint": {
-        "line-cap": "round",
-        "line-join": "round",
-        "line-color": "#ffffff",
-        "line-width": {
-          "stops": [
-            [12, 1],
-            [15, 2],
-            [18, 11]
-          ]
-        }
-      }
-    },
-
 
     {
       "id": "highway_shield_interstate",
@@ -962,7 +962,7 @@
       "source": "mapquest",
       "source-layer": "trans_linear_labels",
       "minzoom": 14,
-      "filter": ["==", "rclass", 5],
+      "filter": ["==", "rclass", 4],
       "layout": {
         "symbol-placement": "line",
         "text-font": "@book-fonts",
